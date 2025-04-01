@@ -1,0 +1,19 @@
+version: '3.8'
+
+volumes:
+  m2_cache:  # Персистентный кэш Maven
+
+services:
+  autotests:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/app/src                # Только исходники
+      - ./reports:/app/target         # Отчеты тестов
+      - m2_cache:/root/.m2            # Кэш зависимостей
+    environment:
+      - HEADLESS=true                 # Режим запуска браузера
+      - TEST_ENV=staging              # Окружение для тестов
+    working_dir: /app
+    command: ["mvn", "test", "-Dheadless=${HEADLESS}"]
