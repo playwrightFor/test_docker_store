@@ -45,13 +45,13 @@
 
 ## Docker
 
-Запуск образа:
+### Запуск образа:
 `docker build --no-cache -t playwright-tests .`
 
-Запуск контейнера:
+### Запуск контейнера:
 `docker run -it --rm playwright-tests`
 
-#Запуск образа и контейнера одной командой:
+### Запуск образа и контейнера одной командой:
 
 `docker build --no-cache -t playwright-tests . && docker run -it --rm playwright-tests`
 
