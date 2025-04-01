@@ -43,6 +43,17 @@
 
 `mvn test -Dtest=LoginTest`
 
+## Docker
+
+Запуск образа:
+`docker build --no-cache -t playwright-tests .`
+
+Запуск контейнера:
+`docker run -it --rm playwright-tests`
+
+#Запуск образа и контейнера одной командой:
+
+`docker build --no-cache -t playwright-tests . && docker run -it --rm playwright-tests`
 
 ## 📊 Отчеты
 После выполнения тестов отчеты доступны:
